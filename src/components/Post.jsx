@@ -1,10 +1,44 @@
-export function Post({ author, content }) {
+import styles from "./Post.module.css";
+
+export function Post() {
   return (
-    <article>
+    <article className={styles.post}>
       <header>
-        <h2>{author}</h2>
+        <div className={styles.author}>
+          <img
+            className={styles.avatar}
+            src="https://github.com/felipe-jm.png"
+          />
+          <div className={styles.authorInfo}>
+            <strong>Felipe Jung</strong>
+            <span>Tech Head</span>
+          </div>
+        </div>
+
+        <time
+          title="11 de Julho de 2024 às 12:41h"
+          dateTime="2024-07-11 12:41:00"
+        >
+          Publicado há 1h
+        </time>
       </header>
-      <p>{content}</p>
+
+      <div className={styles.content}>
+        <p>Salve!</p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
+          nunc nec nunc.
+        </p>
+
+        <p>
+          <a href="#">lucrorural.com.br</a>
+        </p>
+
+        <p>
+          <a href="#">#novo</a>
+        </p>
+      </div>
     </article>
   );
 }
